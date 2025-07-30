@@ -1,0 +1,16 @@
+<section class="asset-diagram">
+  <h2 class="diagram-heading">Lorem Ipsum Dolor Sit</h2>
+
+  <div class="asset-list">
+    <div class="asset-card" *ngFor="let asset of assets">
+      <div class="icon-area">
+        <img src="assets/server.svg" alt="Server Icon" />
+        <span class="label">Server</span>
+      </div>
+      <div class="asset-details">
+        <div class="asset-title">{{ asset.name }}</div>
+        <div class="asset-description">{{ asset.description }}</div>
+      </div>
+    </div>
+  </div>
+</section>

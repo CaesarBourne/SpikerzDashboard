@@ -1,0 +1,47 @@
+.metadata-table {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  margin-top: 1.5rem;
+
+  .section-heading {
+    color: #0f9d58;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .section-text {
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .metadata-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .metadata-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+
+    .key {
+      color: #2d2d2d;
+    }
+
+    .value {
+      color: #555;
+    }
+
+    .success {
+      color: #0f9d58;
+      font-weight: bold;
+    }
+  }
+}

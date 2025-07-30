@@ -1,0 +1,50 @@
+<section class="asset-flow-diagram">
+  <h2 class="heading">Lorem Lorem Lorem</h2>
+
+  <div class="diagram-box">
+    <div class="left-row">
+      <div class="node">
+        <img src="assets/attacker.svg" alt="Attacker" />
+        <p>Loremipsumm</p>
+      </div>
+
+      <div class="arrow">&#8594;</div>
+
+      <div class="node">
+        <img src="assets/server.svg" alt="Server" />
+        <p>Loremipsu</p>
+      </div>
+
+      <div class="arrow">&#8594;</div>
+
+      <div class="node">
+        <img src="assets/server.svg" alt="Server" />
+        <p>Loremipsu</p>
+      </div>
+    </div>
+    <div class="split-connector">
+      <img src="assets/arrow-split.svg" alt="Split" />
+    </div>
+
+    <div class="right-risk">
+      <div class="branching-row">
+        <div class="node-branch">
+          <img src="assets/server-danger.svg" alt="Server Danger" />
+          <p>Loremipsumdolorsit<br /><span>192.168.1.1</span></p>
+        </div>
+
+        <div class="node-branch">
+          <img src="assets/server-danger.svg" alt="Server Danger" />
+          <p>Loremipsumdolorsit002<br /><span>192.168.1.2</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item" *ngFor="let item of legendItems">
+      <img [src]="item.icon" [alt]="item.label" />
+      <span [ngStyle]="{ color: item.color }">{{ item.label }}</span>
+    </div>
+  </div>
+</section>
