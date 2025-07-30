@@ -1,0 +1,68 @@
+<!-- Hamburger for mobile -->
+<button class="hamburger-btn" *ngIf="isMobile" (click)="toggleSidebar()">
+  <span class="material-icons">
+    {{ isSidebarOpenOnMobile ? "close" : "menu" }}
+  </span>
+</button>
+
+<nav
+  [class.collapsed]="!isMobile && isCollapsed"
+  [class.mobile-open]="isMobile && isSidebarOpenOnMobile"
+  [class.mobile-closed]="isMobile && !isSidebarOpenOnMobile"
+>
+  <!-- Collapse toggle for desktop -->
+  <div class="top-toggle" *ngIf="!isMobile">
+    <button class="collapse-btn" (click)="toggleSidebar()">
+      <span class="material-icons">
+        {{ isCollapsed ? "chevron_right" : "chevron_left" }}
+      </span>
+    </button>
+  </div>
+
+  <!-- Main nav items -->
+  <ul class="main-nav">
+    <li *ngFor="let item of navItems">
+      <a
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <img class="icon" [src]="item.icon" alt="{{ item.label }}" />
+        <span class="label" *ngIf="!isCollapsed || isMobile">
+          {{ item.label }}
+        </span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Spacer -->
+  <div class="spacer"></div>
+
+  <!-- Bottom links -->
+  <ul class="bottom-nav">
+    <li>
+      <a>
+        <img class="icon" src="/assets/settings.svg" alt="Settings" />
+        <span class="label" *ngIf="!isCollapsed || isMobile">Lorem</span>
+      </a>
+    </li>
+    <li>
+      <a>
+        <img class="icon" src="/assets/menu.svg" alt="Toggle" />
+        <span class="label" *ngIf="!isCollapsed || isMobile">Lorem</span>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Profile section -->
+  <div class="profile-container">
+    <div class="profile">
+      <img class="avatar" src="/assets/userAvatar.png" alt="User" />
+      <div class="info" *ngIf="!isCollapsed || isMobile">
+        <div class="name">Lorem</div>
+        <div class="title">Lorem</div>
+      </div>
+      <img class="logout" src="/assets/logout.svg" alt="Logout" />
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+.asset-flow-page {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  .info-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .right-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  //  Mobile View
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .main-panel,
+    .right-panel {
+      width: 100%;
+    }
+  }
+}

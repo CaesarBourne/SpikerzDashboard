@@ -1,0 +1,46 @@
+<section class="risk-summary-wrapper">
+  <!-- Left Table -->
+  <div class="risk-table">
+    <div class="table-header">
+      <span>Asset</span>
+      <span>Contextual Risk</span>
+    </div>
+
+    <div class="table-row" *ngFor="let asset of risks">
+      <div class="asset-info">
+        <img src="assets/server.svg" alt="Server icon" />
+        <div class="asset-text">
+          <div class="name">Loremipsumdolorsit</div>
+          <div class="ip">192.168.1.1</div>
+        </div>
+      </div>
+      <div class="risk-badge critical">Critical</div>
+    </div>
+
+    <div class="table-footer">
+      <span class="arrow">&#10094;</span>
+      <span class="pagination">Showing 1-2 of 2</span>
+      <span class="arrow">&#10095;</span>
+    </div>
+  </div>
+
+  <!-- Right Summary -->
+  <div class="risk-summary">
+    <h3>Contextual Risk</h3>
+
+    <div class="summary">
+      <ul class="risk-list">
+        <li *ngFor="let item of risks" [ngClass]="item.colorClass">
+          <span class="dot"></span>
+          <strong>{{ item.count }}</strong> {{ item.label }}
+        </li>
+      </ul>
+
+      <div class="risk-chart">
+        <div class="circle-border critical">
+          <span class="risk-count">{{ totalCritical }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
